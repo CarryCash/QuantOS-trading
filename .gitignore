@@ -1,0 +1,17 @@
+# Rust
+target/
+
+# Python venv (si usas scripts)
+venv/
+__pycache__/
+
+# Environment variables
+.env
+
+# Logs
+logs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db

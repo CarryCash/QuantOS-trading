@@ -1,0 +1,39 @@
+[package]
+name = "quantos-core"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# --- MOTOR ASÍNCRONO ---
+# Necesario para manejar el loop de trading y el WebSocket sin bloqueos
+tokio = { version = "1", features = ["full"] }
+futures = "0.3.31"
+# ... (tus otras dependencias)
+tokio-tungstenite = { version = "0.20", features = ["native-tls"] }
+futures-util = "0.3"
+url = "2.3"
+
+# --- INTELIGENCIA ARTIFICIAL ---
+# Conector para cargar tu modelo .pkl entrenado en Python
+pyo3 = { version = "0.20", features = ["auto-initialize"] }
+
+# --- CONECTIVIDAD Y APIS ---
+# Conector oficial para el WebSocket y órdenes básicas
+binance = "0.19"
+# Cliente HTTP para el Modo Rescate (REST) y Yahoo Finance
+reqwest = { version = "0.11", features = ["json"] }
+# Procesamiento de datos JSON de las APIs
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+
+# --- UTILIDADES Y LOGS ---
+# Manejo de fechas y horas para el historial de trades
+chrono = "0.4"
+# Variables de entorno para proteger tus API Keys
+dotenv = "0.15"
+# Interfaz de consola y captura de teclado (Kill-Switch)
+crossterm = "0.29.0"
+
+# --- ANÁLISIS TÉCNICO ---
+# Librería para indicadores como RSI, Medias Móviles, etc.
+ta = "0.5"
